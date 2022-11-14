@@ -1,10 +1,12 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 
+//-------------------Passenger_Names------------------
+
 
 //using System.Xml.Linq;
 
-//var Names = new string[3];
+//var Names = new string[10];
 //var ArrayA = new string[10];
 //var ArrayD = new string[10];
 //string temp;
@@ -170,6 +172,8 @@
 
 
 
+//-------------------Flight_fare_time------------------
+
 
 //Console.WriteLine("Enter the flight fare");
 //float fare = float.Parse(Console.ReadLine());
@@ -200,122 +204,191 @@
 //}
 
 
-using System.ComponentModel.DataAnnotations;
+//-------------------Flight_fare------------------
 
-int[]  Flight = new int[10];
-int temp;
-Console.WriteLine("Enter the fares: ");
-for(int i = 0; i < Flight.Length; i++)
+//int[] Flight = new int[10];
+//int temp;
+//Console.WriteLine("Enter the fares: ");
+//for (int i = 0; i < Flight.Length; i++)
+//{
+//    Flight[i] = int.Parse(Console.ReadLine());
+//}
+//var dup = new bool[5];
+
+//Ascending();
+//Descending();
+//Search();
+//MinValue();
+//MaxValue();
+//Dup();
+
+//void Dup()
+//{
+//    Console.WriteLine("Duplicate Fares: ");
+
+//    for (int i = 0; i < Flight.Length; i++)
+//    {
+//        for (int j = 0; j < Flight.Length; j++)
+//        {
+//            if (Flight[i] == Flight[j] && i != j && dup[i] == false)
+//            {
+
+//                Console.WriteLine(Flight[i]);
+
+//                dup[i] = true;
+//                dup[j] = true;
+
+
+//            }
+//        }
+//    }
+//}
+
+
+//void Ascending()
+//{
+
+//    for (int i = 0; i < Flight.Length; i++)
+//    {
+//        for (int j = i + 1; j < Flight.Length; j++)
+//        {
+//            if (Flight[i] > Flight[j])
+//            {
+//                temp = Flight[i];
+//                Flight[i] = Flight[j];
+//                Flight[j] = temp;
+//            }
+//        }
+
+//    }
+//    Console.WriteLine("Ascending Order : ");
+
+//    for (int j = 0; j < Flight.Length; j++)
+//    {
+//        Console.WriteLine(Flight[j]);
+//    }
+//}
+
+//void Descending()
+//{
+
+//    for (int i = 0; i < Flight.Length; i++)
+//    {
+//        for (int j = i + 1; j < Flight.Length; j++)
+//        {
+//            if (Flight[i] < Flight[j])
+//            {
+//                temp = Flight[i];
+//                Flight[i] = Flight[j];
+//                Flight[j] = temp;
+//            }
+//        }
+
+//    }
+//    Console.WriteLine("Ascending Order : ");
+
+//    for (int j = 0; j < Flight.Length; j++)
+//    {
+//        Console.WriteLine(Flight[j]);
+//    }
+//}
+
+//void Search()
+//{
+//    int search;
+//    Boolean Found = false;
+//    Console.WriteLine("Enter to search : ");
+//    search = int.Parse(Console.ReadLine());
+//    for (int i = 0; i < Flight.Length; i++)
+//    {
+//        if (search == Flight[i])
+//        {
+//            Found = true;
+//            break;
+//        }
+//    }
+
+//    if (!Found)
+//    {
+//        Console.WriteLine("Element Not Found");
+
+//    }
+//    else
+//    {
+//        Console.WriteLine("Element Found");
+//    }
+//}
+
+//void MinValue()
+//{
+//    int small = Flight[0];
+//    for (int i = 0; i < Flight.Length; i++)
+//    {
+//        if (Flight[i] < small)
+//        {
+//            small = Flight[i];
+//        }
+//    }
+//    Console.WriteLine("Minimum Value : " + small);
+//}
+
+//void MaxValue()
+//{
+//    int large = Flight[0];
+//    for (int i = 0; i < Flight.Length; i++)
+//    {
+//        if (Flight[i] > large)
+//        {
+//            large = Flight[i];
+//        }
+//    }
+//    Console.WriteLine("Maximum Value : " + large);
+//}
+
+
+
+
+//-------------------Date of Birth------------------
+
+
+
+Console.WriteLine("Enter your Date of Birth.");
+DateOnly dob = DateOnly.Parse(Console.ReadLine());
+Console.WriteLine(dob);
+
+Console.WriteLine("Enter the today's date");
+DateOnly today = DateOnly.Parse(Console.ReadLine());
+
+var day = today.DayNumber - dob.DayNumber;
+
+int hours = day * 24;
+Console.WriteLine($" Age in Hours: {hours}");
+
+int weeks = day / 7;
+Console.WriteLine($" Age in Weeks: {weeks}");
+
+int months = day / 30;
+Console.WriteLine($" Age in Months: {months}");
+
+int years = day / 365;
+Console.WriteLine($" Age in years: {years}");
+
+int Year = dob.Year;
+//Console.WriteLine(DateOfYear);
+
+if (!(Year % 100 == 0))
 {
-    Flight[i] = int.Parse(Console.ReadLine());
+    if (Year % 4 == 0) 
+    {
+        Console.WriteLine("Year of Birth is a leap Year."); 
+    }
+    Console.WriteLine(" Year of Birth is Not a Leap Year.");
+}
+else
+{
+    Console.WriteLine(" Year of Birth is Not a leap year.");
 }
 
-Ascending();
-Descending();
-Search();
-MinValue();
-MaxValue();
-
-
-void Ascending()
-{
-
-    for (int i = 0; i < Flight.Length; i++)
-    {
-        for (int j = i + 1; j < Flight.Length; j++)
-        {
-            if (Flight[i] > Flight[j])
-            {
-                temp = Flight[i];
-                Flight[i] = Flight[j];
-                Flight[j] = temp;
-            }
-        }
-
-    }
-    Console.WriteLine("Ascending Order : ");
-
-    for (int j = 0; j < Flight.Length; j++)
-    {
-        Console.WriteLine(Flight[j]);
-    }
-}
-
-void Descending()
-{
-
-    for (int i = 0; i < Flight.Length; i++)
-    {
-        for (int j = i + 1; j < Flight.Length; j++)
-        {
-            if (Flight[i] < Flight[j])
-            {
-                temp = Flight[i];
-                Flight[i] = Flight[j];
-                Flight[j] = temp;
-            }
-        }
-
-    }
-    Console.WriteLine("Ascending Order : ");
-
-    for (int j = 0; j < Flight.Length; j++)
-    {
-        Console.WriteLine(Flight[j]);
-    }
-}
-
-void Search()
-{
-    int search;
-    Boolean Found = false;
-    Console.WriteLine("Enter to search : ");
-    search = int.Parse(Console.ReadLine());
-    for(int i = 0; i < Flight.Length; i++)
-    {
-        if (search == Flight[i] )
-        {
-            Found = true;
-            break;
-        }
-    }
-
-    if (!Found)
-    {
-        Console.WriteLine("Element Not Found");
-
-    }
-    else
-    {
-        Console.WriteLine("Element Found");
-    }
-}
-
-void MinValue()
-{
-    int small = Flight[0];
-    for (int i = 0; i < Flight.Length; i++)
-    {
-            if (Flight[i] < small)
-            {
-                   small= Flight[i];
-            }
-    }
-    Console.WriteLine("Minimum Value : " + small);
-}
-
-void MaxValue()
-{
-    int large = Flight[0];
-    for (int i = 0; i < Flight.Length; i++)
-    {
-        if (Flight[i] > large)
-        {
-            large = Flight[i];
-        }
-    }
-    Console.WriteLine("Maximum Value : " + large);
-}
 
 
 
