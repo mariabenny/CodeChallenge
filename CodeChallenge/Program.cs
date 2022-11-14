@@ -58,8 +58,9 @@ var Names = new string[10];
 var ArrayA = new string[10];
 var ArrayD = new string[10];
 string temp;
+string search;
 var dup = new bool[5];
-Boolean hasFound = false;
+Boolean Found = false;
 
 Console.WriteLine("Enter 10 Names : ");
 for (int i = 0; i < Names.Length; i++)
@@ -68,6 +69,10 @@ for (int i = 0; i < Names.Length; i++)
 }
 Ascending();
 Descending();
+Search();
+Length();
+Split();
+Duplicate();
 
 
 
@@ -118,5 +123,91 @@ void Descending()
         Console.WriteLine(Names[j]);
     }
 }
+
+
+
+void Search()
+{
+    Console.WriteLine("Enter to search : ");
+    search = Console.ReadLine();
+    for (int i = 0; i < Names.Length; i++)
+    {
+        if (Names[i] == search)
+        {
+            Console.WriteLine("Element Found at  position : " + i);
+            Found = true;
+            break;
+        }
+    }
+    if (!Found)
+    {
+        Console.WriteLine("Element Not Found");
+
+    }
+}
+
+void Length()
+{
+    foreach (var item in Names)
+    {
+        Console.WriteLine($"Length of {item} is {item.Length}");
+    }
+}
+
+void Split()
+{
+    Console.WriteLine("Names having First and last name : ");
+
+    foreach (var item in Names)
+    {
+        for (int i = 0; i < item.Length; i++)
+        {
+            if (item[i] == ' ')
+            {
+                Console.Write($"First name of {item} is : ");
+                for (int j = 0; j < i; j++)
+                {
+                    Console.Write(item[j]);
+                }
+                Console.WriteLine();
+                Console.Write($"Last name of {item} is : ");
+                for (int j = i + 1; j < item.Length; j++)
+                {
+                    Console.Write(item[j]);
+                }
+                Console.WriteLine();
+
+            }
+        }
+    }
+}
+
+void Duplicate()
+{
+    Console.WriteLine("Duplicate Names : ");
+
+    for (int i = 0; i < Names.Length; i++)
+    {
+        for (int j = 0; j < Names.Length; j++)
+        {
+            if (Names[i] == Names[j] && i != j && dup[i] == false)
+            {
+                
+                Console.WriteLine($" {Names[i]} ");
+
+                dup[i] = true;
+                dup[j] = true;
+
+
+            }
+        }
+    }
+}
+
+
+
+
+
+
 
 
