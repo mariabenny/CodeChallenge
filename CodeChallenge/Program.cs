@@ -171,33 +171,152 @@
 
 
 
-Console.WriteLine("Enter the flight fare");
-float fare = float.Parse(Console.ReadLine());
-Console.WriteLine("Enter the time(railway time)");
-int time = int.Parse(Console.ReadLine());
+//Console.WriteLine("Enter the flight fare");
+//float fare = float.Parse(Console.ReadLine());
+//Console.WriteLine("Enter the time(railway time)");
+//int time = int.Parse(Console.ReadLine());
 
-if (time >= 0600 && time < 0900)
+//if (time >= 0600 && time < 0900)
+//{
+//    fare = fare + fare * 10 / 100;
+//    Console.WriteLine("The fare is" + fare);
+//}
+//else if (time >= 0900 && time < 1700)
+//{
+//    fare = fare + fare * 20 / 100;
+//    Console.WriteLine("The fare is" + fare);
+//}
+
+//else if (time >= 1700 && time < 2300)
+//{
+//    fare = fare + fare * 7 / 100;
+//    Console.WriteLine("The fare is" + fare);
+//}
+
+//else
+//{
+//    fare = fare + fare * 5 / 100;
+//    Console.WriteLine("The fare is" + fare);
+//}
+
+
+using System.ComponentModel.DataAnnotations;
+
+int[]  Flight = new int[10];
+int temp;
+Console.WriteLine("Enter the fares: ");
+for(int i = 0; i < Flight.Length; i++)
 {
-    fare = fare + fare * 10 / 100;
-    Console.WriteLine("The fare is" + fare);
-}
-else if (time >= 0900 && time < 1700)
-{
-    fare = fare + fare * 20 / 100;
-    Console.WriteLine("The fare is" + fare);
+    Flight[i] = int.Parse(Console.ReadLine());
 }
 
-else if (time >= 1700 && time < 2300)
+Ascending();
+Descending();
+Search();
+MinValue();
+MaxValue();
+
+
+void Ascending()
 {
-    fare = fare + fare * 7 / 100;
-    Console.WriteLine("The fare is" + fare);
+
+    for (int i = 0; i < Flight.Length; i++)
+    {
+        for (int j = i + 1; j < Flight.Length; j++)
+        {
+            if (Flight[i] > Flight[j])
+            {
+                temp = Flight[i];
+                Flight[i] = Flight[j];
+                Flight[j] = temp;
+            }
+        }
+
+    }
+    Console.WriteLine("Ascending Order : ");
+
+    for (int j = 0; j < Flight.Length; j++)
+    {
+        Console.WriteLine(Flight[j]);
+    }
 }
 
-else
+void Descending()
 {
-    fare = fare + fare * 5 / 100;
-    Console.WriteLine("The fare is" + fare);
+
+    for (int i = 0; i < Flight.Length; i++)
+    {
+        for (int j = i + 1; j < Flight.Length; j++)
+        {
+            if (Flight[i] < Flight[j])
+            {
+                temp = Flight[i];
+                Flight[i] = Flight[j];
+                Flight[j] = temp;
+            }
+        }
+
+    }
+    Console.WriteLine("Ascending Order : ");
+
+    for (int j = 0; j < Flight.Length; j++)
+    {
+        Console.WriteLine(Flight[j]);
+    }
 }
+
+void Search()
+{
+    int search;
+    Boolean Found = false;
+    Console.WriteLine("Enter to search : ");
+    search = int.Parse(Console.ReadLine());
+    for(int i = 0; i < Flight.Length; i++)
+    {
+        if (search == Flight[i] )
+        {
+            Found = true;
+            break;
+        }
+    }
+
+    if (!Found)
+    {
+        Console.WriteLine("Element Not Found");
+
+    }
+    else
+    {
+        Console.WriteLine("Element Found");
+    }
+}
+
+void MinValue()
+{
+    int small = Flight[0];
+    for (int i = 0; i < Flight.Length; i++)
+    {
+            if (Flight[i] < small)
+            {
+                   small= Flight[i];
+            }
+    }
+    Console.WriteLine("Minimum Value : " + small);
+}
+
+void MaxValue()
+{
+    int large = Flight[0];
+    for (int i = 0; i < Flight.Length; i++)
+    {
+        if (Flight[i] > large)
+        {
+            large = Flight[i];
+        }
+    }
+    Console.WriteLine("Maximum Value : " + large);
+}
+
 
 
 
