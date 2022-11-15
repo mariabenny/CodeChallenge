@@ -352,42 +352,92 @@
 
 
 
-Console.WriteLine("Enter your Date of Birth.");
-DateOnly dob = DateOnly.Parse(Console.ReadLine());
-Console.WriteLine(dob);
+//Console.WriteLine("Enter your Date of Birth.");
+//DateOnly dob = DateOnly.Parse(Console.ReadLine());
+//Console.WriteLine(dob);
 
-Console.WriteLine("Enter the today's date");
-DateOnly today = DateOnly.Parse(Console.ReadLine());
+//Console.WriteLine("Enter the today's date");
+//DateOnly today = DateOnly.Parse(Console.ReadLine());
 
-var day = today.DayNumber - dob.DayNumber;
+//var day = today.DayNumber - dob.DayNumber;
 
-int hours = day * 24;
-Console.WriteLine($" Age in Hours: {hours}");
+//int hours = day * 24;
+//Console.WriteLine($" Age in Hours: {hours}");
 
-int weeks = day / 7;
-Console.WriteLine($" Age in Weeks: {weeks}");
+//int weeks = day / 7;
+//Console.WriteLine($" Age in Weeks: {weeks}");
 
-int months = day / 30;
-Console.WriteLine($" Age in Months: {months}");
+//int months = day / 30;
+//Console.WriteLine($" Age in Months: {months}");
 
-int years = day / 365;
-Console.WriteLine($" Age in years: {years}");
+//int years = day / 365;
+//Console.WriteLine($" Age in years: {years}");
 
-int Year = dob.Year;
-//Console.WriteLine(DateOfYear);
+//int Year = dob.Year;
+////Console.WriteLine(DateOfYear);
 
-if (!(Year % 100 == 0))
+//if (!(Year % 100 == 0))
+//{
+//    if (Year % 4 == 0) 
+//    {
+//        Console.WriteLine("Year of Birth is a leap Year."); 
+//    }
+//    Console.WriteLine(" Year of Birth is Not a Leap Year.");
+//}
+//else
+//{
+//    Console.WriteLine(" Year of Birth is Not a leap year.");
+//}
+
+//-----------Odd Position--------
+//int[] Flight = new int[10];
+
+//Console.WriteLine("Enter the fares: ");
+//for (int i = 1; i < Flight.Length; i+=2)
+//{
+//    Flight[i] = int.Parse(Console.ReadLine());
+//}
+
+//Console.WriteLine(Flight[0]);
+//Console.WriteLine(Flight[1]);
+
+
+//----------FLYER POINTS------
+Console.WriteLine("Enter the passenger name: ");
+string name = Console.ReadLine();
+Console.WriteLine("Enter the total distance travelled:  ");
+int miles =int.Parse( Console.ReadLine());
+int flyer_points;
+if (miles > 100000)
 {
-    if (Year % 4 == 0) 
-    {
-        Console.WriteLine("Year of Birth is a leap Year."); 
-    }
-    Console.WriteLine(" Year of Birth is Not a Leap Year.");
+    flyer_points = 50;
+    Console.WriteLine("Flyer points: " + flyer_points);
+}
+else if (miles > 50000)
+{
+    flyer_points = 30;
+    Console.WriteLine("Flyer points: " + flyer_points);
+}
+else if (miles > 20000)
+{
+    flyer_points = 20;
+    Console.WriteLine("Flyer points: " + flyer_points);
+}
+ else if (miles > 10000)
+{
+    flyer_points = 10;
+    Console.WriteLine("Flyer points: " + flyer_points);
 }
 else
 {
-    Console.WriteLine(" Year of Birth is Not a leap year.");
+    Console.WriteLine("Invalid");
 }
+
+
+
+
+
+
 
 
 
