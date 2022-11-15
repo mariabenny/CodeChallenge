@@ -460,51 +460,69 @@
 
 
 //-----------10 Passengers Date o f birth--------
-DateOnly[] dob = new DateOnly[3];
-int[] date = new int[3]; 
-int[] Age = new int[3];
-DateOnly dateb;
-Console.WriteLine("Enter your Date of Birth.");
-for (int i = 0; i < dob.Length; i++)
+//DateOnly[] dob = new DateOnly[10];
+//int[] date = new int[10];
+//int[] Age = new int[10];
+//DateOnly dateb;
+//Console.WriteLine("Enter your Date of Birth.");
+//for (int i = 0; i < dob.Length; i++)
+//{
+//    dob[i] = DateOnly.Parse(Console.ReadLine());
+//}
+
+//int today = DateTime.Now.Year;
+
+
+//for (int i = 0; i < dob.Length; i++)
+//{
+//    date[i] = dob[i].Year;
+//}
+
+//for (int i = 0; i < dob.Length; i++)
+//{
+//    Age[i] = today - date[i];
+//}
+
+//for (int i = 0; i < Age.Length; i++)
+//{
+//    if (Age[i] < 10)
+//    {
+//        Console.WriteLine("Kid");
+//    }
+//    else if (Age[i] > 10 && Age[i] < 30)
+//    {
+//        Console.WriteLine("Youth");
+//    }
+//    else if (Age[i] > 30 && Age[i] < 60)
+//    {
+//        Console.WriteLine("Adult");
+//    }
+//    else
+//    {
+//        Console.WriteLine("Older");
+//    }
+//}
+
+//----------------------- Display 2 arrays-----------------------------
+string[] Names = new string[10];
+string[] Destination = new string[10];
+Console.WriteLine("Enter thre names: ");
+for(int i = 0; i < Names.Length; i++)
 {
-    dob[i] = DateOnly.Parse(Console.ReadLine());
+    Names[i] = Console.ReadLine();
+}
+Console.WriteLine("Enter the Destinations: ");
+for (int i = 0; i < Names.Length; i++)
+{
+    Destination[i] = Console.ReadLine();
 }
 
-int today = DateTime.Now.Year;
-
-
-for (int i = 0; i < dob.Length; i++)
+string[] Arr = Names.Concat(Destination).ToArray();
+Console.WriteLine("Combined Array");
+for(int i = 0; i < Arr.Length; i++)
 {
-    date[i] = dob[i].Year;
+    Console.WriteLine(Arr[i]);
 }
-
-for (int i = 0; i < dob.Length; i++)
-{
-    Age[i] = today - date[i];
-}
-
-for (int i = 0; i < Age.Length; i++)
-{
-    if (Age[i] < 10)
-    {
-        Console.WriteLine("Kid");
-    }
-    else if (Age[i] > 10 && Age[i] < 30)
-    {
-        Console.WriteLine("Youth");
-    }
-    else if (Age[i] > 30 && Age[i] < 60)
-    {
-        Console.WriteLine("Adult");
-    }
-    else
-    {
-        Console.WriteLine("Older");
-    }
-}
-
-
-
 
 
 
