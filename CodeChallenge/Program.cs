@@ -403,35 +403,108 @@
 
 
 //----------FLYER POINTS------
-Console.WriteLine("Enter the passenger name: ");
-string name = Console.ReadLine();
-Console.WriteLine("Enter the total distance travelled:  ");
-int miles =int.Parse( Console.ReadLine());
-int flyer_points;
-if (miles > 100000)
+//Console.WriteLine("Enter the passenger name: ");
+//string name = Console.ReadLine();
+//Console.WriteLine("Enter the total distance travelled:  ");
+//int miles =int.Parse( Console.ReadLine());
+//int flyer_points;
+//if (miles > 100000)
+//{
+//    flyer_points = 50;
+//    Console.WriteLine("Flyer points: " + flyer_points);
+//}
+//else if (miles > 50000)
+//{
+//    flyer_points = 30;
+//    Console.WriteLine("Flyer points: " + flyer_points);
+//}
+//else if (miles > 20000)
+//{
+//    flyer_points = 20;
+//    Console.WriteLine("Flyer points: " + flyer_points);
+//}
+// else if (miles > 10000)
+//{
+//    flyer_points = 10;
+//    Console.WriteLine("Flyer points: " + flyer_points);
+//}
+//else
+//{
+//    Console.WriteLine("Invalid");
+//}
+
+//----------FARE and Destination----------------
+//int[] Fares = new int[5];
+//string[] Destination = new string[5];
+//Console.Write("Enter the fares: ");
+//for(int i = 0; i < Fares.Length; i++)
+//{
+//    Fares[i] = int.Parse(Console.ReadLine());
+//}
+//Console.Write("Enter the destinations: ");
+//for (int i = 0; i < Destination.Length; i++)
+//{
+//    Destination[i] =Console.ReadLine();
+//}
+//Console.WriteLine("Enter the number: ");
+//int n = int.Parse(Console.ReadLine());
+
+//for(int i = 0; i < Fares.Length; i++)
+//{
+//    if( i == n)
+//    {
+//        Console.WriteLine("Destination is : "+ Destination[i]);
+//        Console.WriteLine("Fare is : "+ Fares[i]);
+//    }
+//}
+
+
+//-----------10 Passengers Date o f birth--------
+DateOnly[] dob = new DateOnly[3];
+int[] date = new int[3]; 
+int[] Age = new int[3];
+DateOnly dateb;
+Console.WriteLine("Enter your Date of Birth.");
+for (int i = 0; i < dob.Length; i++)
 {
-    flyer_points = 50;
-    Console.WriteLine("Flyer points: " + flyer_points);
+    dob[i] = DateOnly.Parse(Console.ReadLine());
 }
-else if (miles > 50000)
+
+int today = DateTime.Now.Year;
+
+
+for (int i = 0; i < dob.Length; i++)
 {
-    flyer_points = 30;
-    Console.WriteLine("Flyer points: " + flyer_points);
+    date[i] = dob[i].Year;
 }
-else if (miles > 20000)
+
+for (int i = 0; i < dob.Length; i++)
 {
-    flyer_points = 20;
-    Console.WriteLine("Flyer points: " + flyer_points);
+    Age[i] = today - date[i];
 }
- else if (miles > 10000)
+
+for (int i = 0; i < Age.Length; i++)
 {
-    flyer_points = 10;
-    Console.WriteLine("Flyer points: " + flyer_points);
+    if (Age[i] < 10)
+    {
+        Console.WriteLine("Kid");
+    }
+    else if (Age[i] > 10 && Age[i] < 30)
+    {
+        Console.WriteLine("Youth");
+    }
+    else if (Age[i] > 30 && Age[i] < 60)
+    {
+        Console.WriteLine("Adult");
+    }
+    else
+    {
+        Console.WriteLine("Older");
+    }
 }
-else
-{
-    Console.WriteLine("Invalid");
-}
+
+
+
 
 
 
